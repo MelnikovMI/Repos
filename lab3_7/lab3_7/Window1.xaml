@@ -19,7 +19,7 @@
         
         <Button Height="23" HorizontalAlignment="Left" Margin="117,92,0,0" Name="button13" VerticalAlignment="Top" Width="71" Click="button13_Click">Задание 11</Button>
         
-        
+        <Button Height="23" HorizontalAlignment="Left" Margin="117,156,0,133" Name="button15" Width="71" Click="button15_Click">Задание 13</Button>
         
         
         <Button Height="23" HorizontalAlignment="Left" Margin="117,0,0,37" Name="button18" VerticalAlignment="Bottom" Width="71" Click="button18_Click">Задание 16</Button>
