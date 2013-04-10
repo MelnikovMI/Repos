@@ -156,5 +156,61 @@ namespace lab3_7
             }
             else lbMain.Items.Add("Первый элемент массива из десяти чисел не превосходит среднее значение элементов этого массива");
         }
+
+        private void button7_Click(object sender, RoutedEventArgs e)
+        {
+            ArrayList myAL = new ArrayList();
+            int index, ind2;
+            int itemCount = 10;
+            Random rnd1 = new Random();
+            int number, kolich = 0;
+            lbMain.Items.Clear();
+            lbMain.Items.Add("Исходный массив");
+            for (index = 1; index <= itemCount; index++)
+            {
+                number = -100 + rnd1.Next(200);
+                myAL.Add(number);
+                lbMain.Items.Add(number);
+            }
+            for (index = 0; index < itemCount - 1; )
+            {
+                if (Convert.ToInt32(myAL[index]) == 0)
+                {
+                    index = index + 1;
+                }
+                else
+                {
+                    if (Convert.ToInt32(myAL[index + 1]) == 0)
+                    {
+                        ind2 = index + 1;
+                        while (Convert.ToInt32(myAL[ind2]) == 0 && ind2 < itemCount - 1)
+                        {
+                            ind2++;
+                        }
+                        if (Convert.ToInt32(myAL[ind2]) != 0)
+                        {
+                            if ((Convert.ToInt32(myAL[index])) * (Convert.ToInt32(myAL[ind2])) < 0)
+                            {
+                                kolich += 1;
+                            }
+                            index = ind2;
+                        }
+                    }
+                    else
+                    {
+                        if ((Convert.ToInt32(myAL[index])) * (Convert.ToInt32(myAL[index + 1])) < 0)
+                        {
+                            kolich += 1;
+                        }
+                        index++;
+                    }
+                }
+            }
+            if (kolich != 0)
+            {
+                lbMain.Items.Add(Convert.ToString(kolich) + " раз меняется знак у элементов массива");
+            }
+            else lbMain.Items.Add("Знак у элементов массива не меняется");
+        }
     }
 }
