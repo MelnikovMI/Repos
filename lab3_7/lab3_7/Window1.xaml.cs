@@ -355,5 +355,81 @@ namespace lab3_7
             }
             else lbMain.Items.Add("В массиве не содержатся элементы, значения которых меньше первого элемента массива и одновременно больше последнего элемента");
         }
+
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            
+            
+                
+                
+                    
+                
+            
+            
+            
+                
+            
+            
+        
+
+        private void button14_Click(object sender, RoutedEventArgs e)
+        {
+            ArrayList myAL = new ArrayList();
+            ArrayList myInd = new ArrayList();
+            int index;
+            int itemCount = 10;
+            Random rnd1 = new Random();
+            int number, kolich, bliz;
+            lbMain.Items.Clear();
+            lbMain.Items.Add("Исходный массив");
+            for (index = 1; index <= itemCount; index++)
+            {
+                number = -100 + rnd1.Next(200);
+                myAL.Add(number);
+                lbMain.Items.Add(number);
+            }
+            bliz = Math.Abs(Convert.ToInt32(myAL[1]) - Convert.ToInt32(myAL[0]));
+            myInd.Add(0);
+            for (index = 2; index < itemCount; index++)
+            {
+                if (Math.Abs(Convert.ToInt32(myAL[1]) - Convert.ToInt32(myAL[index])) < bliz)
+                {
+                    bliz = Math.Abs(Convert.ToInt32(myAL[1]) - Convert.ToInt32(myAL[index]));
+                    myInd.Clear();
+                    myInd.Add(index);
+                }
+                else
+                {
+                    if (Math.Abs(Convert.ToInt32(myAL[1]) - Convert.ToInt32(myAL[index])) == bliz)
+                    {
+                        myInd.Add(index);
+                    }
+                }
+            }
+            kolich = myInd.Count;
+            if (kolich > 1)
+            {
+                lbMain.Items.Add("Список номеров и значений элементов массива, меньше всего отличающихся от второго элемента этого массива");
+                while (kolich > 0)
+                {
+                    lbMain.Items.Add(Convert.ToString(Convert.ToInt32(myInd[kolich - 1]) + 1) + " элемент массива, значение которого равно " + Convert.ToString(Convert.ToInt32(myAL[Convert.ToInt32(myInd[kolich - 1])])));
+                    kolich--;
+                }
+            }
+            else lbMain.Items.Add(Convert.ToString(Convert.ToInt32(myInd[0]) + 1) + " элемент массива, значение которого равно " + Convert.ToString(myAL[Convert.ToInt32(myInd[0])]) + ", меньше всего отличается от второго элемента этого массива");
+        }
     }
 }
