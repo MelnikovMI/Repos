@@ -326,5 +326,34 @@ namespace lab3_7
             }
             else lbMain.Items.Add("В массиве не содержатся элементы, значения которых не кратны 3");
         }
+
+        private void button12_Click(object sender, RoutedEventArgs e)
+        {
+            ArrayList myAL = new ArrayList();
+            int index;
+            int itemCount = 10;
+            Random rnd1 = new Random();
+            int number, kolich = 0;
+            lbMain.Items.Clear();
+            lbMain.Items.Add("Исходный массив");
+            for (index = 1; index <= itemCount; index++)
+            {
+                number = -100 + rnd1.Next(200);
+                myAL.Add(number);
+                lbMain.Items.Add(number);
+            }
+            for (index = 1; index < itemCount; index++)
+            {
+                if ((Convert.ToInt32(myAL[index]) < Convert.ToInt32(myAL[0])) && (Convert.ToInt32(myAL[index]) > Convert.ToInt32(myAL[itemCount - 1])))
+                {
+                    kolich += 1;
+                }
+            }
+            if (kolich != 0)
+            {
+                lbMain.Items.Add(Convert.ToString(kolich) + " чисел меньше первого элемента массива и одновременно больше последнего элемента");
+            }
+            else lbMain.Items.Add("В массиве не содержатся элементы, значения которых меньше первого элемента массива и одновременно больше последнего элемента");
+        }
     }
 }
