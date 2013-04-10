@@ -99,5 +99,62 @@ namespace lab3_7
             }
             else lbMain.Items.Add("В массиве не содержится элемент, значение которого больше 25");
         }
+
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            
+            
+                
+                
+                    
+                    
+                
+            
+            
+            
+                
+                
+            
+            
+        
+
+        private void button6_Click(object sender, RoutedEventArgs e)
+        {
+            ArrayList myAL = new ArrayList();
+            int index;
+            int itemCount = 10;
+            Random rnd1 = new Random();
+            int number, summa = 0;
+            lbMain.Items.Clear();
+            lbMain.Items.Add("Исходный массив");
+            for (index = 1; index <= itemCount; index++)
+            {
+                number = -100 + rnd1.Next(200);
+                myAL.Add(number);
+                lbMain.Items.Add(number);
+            }
+            for (index = 0; index < itemCount; index++)
+            {
+                summa += Convert.ToInt32(myAL[index]);
+            }
+            if (Convert.ToInt32(myAL[0]) > (summa / itemCount))
+            {
+                lbMain.Items.Add("Первый элемент массива из десяти чисел превосходит среднее значение элементов этого массива");
+            }
+            else lbMain.Items.Add("Первый элемент массива из десяти чисел не превосходит среднее значение элементов этого массива");
+        }
     }
 }
