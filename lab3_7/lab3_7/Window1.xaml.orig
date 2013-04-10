@@ -10,14 +10,19 @@
         <Button Height="23" HorizontalAlignment="Left" Margin="22,28,0,0" Name="button1" VerticalAlignment="Top" Width="71" Click="button1_Click">Задание 1</Button>
         <Button Height="23" HorizontalAlignment="Left" Margin="22,60,0,0" Name="button4" Width="71" Click="button4_Click" VerticalAlignment="Top">Задание 2</Button>
         <Button Height="23" HorizontalAlignment="Left" Margin="22,92,0,0" Name="button5" Width="71" Click="button5_Click" VerticalAlignment="Top">Задание 3</Button>
+        
+<<<<<<< HEAD
         <Button Height="23" HorizontalAlignment="Left" Margin="22,124,0,0" Name="button6" Width="71" Click="button6_Click" VerticalAlignment="Top">Задание 4</Button>
         <Button Height="23" HorizontalAlignment="Left" Margin="22,156,0,133" Name="button7" Width="71" Click="button7_Click">Задание 5</Button>
-	    <Button Height="23" HorizontalAlignment="Left" Margin="22,0,0,101" Name="button8" VerticalAlignment="Bottom" Width="71" Click="button8_Click">Задание 6</Button>
+=======
+        
+        <Button Height="23" HorizontalAlignment="Left" Margin="22,0,0,101" Name="button8" VerticalAlignment="Bottom" Width="71" Click="button8_Click">Задание 6</Button>
         <Button Height="23" HorizontalAlignment="Left" Margin="22,0,0,69" Name="button9" VerticalAlignment="Bottom" Width="71" Click="button9_Click">Задание 7</Button>
         
+>>>>>>> vet2
         
         
-        <Button Height="23" HorizontalAlignment="Left" Margin="117,92,0,0" Name="button13" VerticalAlignment="Top" Width="71" Click="button13_Click">Задание 11</Button>
+        
         
         
         
