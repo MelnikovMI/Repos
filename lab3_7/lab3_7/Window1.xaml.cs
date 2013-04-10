@@ -100,36 +100,36 @@ namespace lab3_7
             else lbMain.Items.Add("В массиве не содержится элемент, значение которого больше 25");
         }
 
-        
-        
-            
-            
-            
-            
-            
-            
-            
-            
-            
-                
-                
-                
-            
-            
-            
-                
-                
-                    
-                    
-                
-            
-            
-            
-                
-                
-            
-            
-        
+        private void button5_Click(object sender, RoutedEventArgs e)
+        {
+            ArrayList myAL = new ArrayList();
+            int index;
+            int itemCount = 10;
+            Random rnd1 = new Random();
+            int number, summa = 0, kolich = 0;
+            lbMain.Items.Clear();
+            lbMain.Items.Add("Исходный массив");
+            for (index = 1; index <= itemCount; index++)
+            {
+                number = -100 + rnd1.Next(200);
+                myAL.Add(number);
+                lbMain.Items.Add(number);
+            }
+            for (index = 0; index < itemCount; index++)
+            {
+                if ((Convert.ToInt32(myAL[index])) > (Convert.ToInt32(myAL[1])))
+                {
+                    summa += Convert.ToInt32(myAL[index]);
+                    kolich += 1;
+                }
+            }
+            if (kolich != 0)
+            {
+                lbMain.Items.Add("Сумма значений элементов массива больших, чем второй элемент этого массива");
+                lbMain.Items.Add(summa);
+            }
+            else lbMain.Items.Add("В массиве не содержатся элементы, значения которых больше, чем второй элемент этого массива");
+        }
 
         private void button6_Click(object sender, RoutedEventArgs e)
         {
@@ -211,6 +211,333 @@ namespace lab3_7
                 lbMain.Items.Add(Convert.ToString(kolich) + " раз меняется знак у элементов массива");
             }
             else lbMain.Items.Add("Знак у элементов массива не меняется");
+        }
+
+        private void button8_Click(object sender, RoutedEventArgs e)
+        {
+            ArrayList myAL = new ArrayList();
+            int index;
+            int itemCount = 10;
+            Random rnd1 = new Random();
+            int number, kolich = 0;
+            lbMain.Items.Clear();
+            lbMain.Items.Add("Исходный массив");
+            for (index = 1; index <= itemCount; index++)
+            {
+                number = -100 + rnd1.Next(200);
+                myAL.Add(number);
+                lbMain.Items.Add(number);
+            }
+            for (index = 0; index < itemCount; index++)
+            {
+                if (Convert.ToInt32(myAL[index]) > Convert.ToInt32(myAL[3])) kolich += 1;
+            }
+            if (kolich != 0)
+            {
+                lbMain.Items.Add(Convert.ToString(kolich) + " элементов массива из 10 чисел больше, чем четвертый элемент этого массива.");
+            }
+            else lbMain.Items.Add("В массиве не содержатся элементы, значения которых больше, чем четвертый элемент этого массива");
+        }
+
+        private void button9_Click(object sender, RoutedEventArgs e)
+        {
+            ArrayList myAL = new ArrayList();
+            int index;
+            int itemCount = 10;
+            Random rnd1 = new Random();
+            int number, kolich = 0, summa = 0;
+            lbMain.Items.Clear();
+            lbMain.Items.Add("Исходный массив");
+            for (index = 1; index <= itemCount; index++)
+            {
+                number = -100 + rnd1.Next(200);
+                myAL.Add(number);
+                lbMain.Items.Add(number);
+            }
+            for (index = 0; index < itemCount; index++)
+            {
+                if ((Convert.ToInt32(myAL[index])) < 21)
+                {
+                    summa += Convert.ToInt32(myAL[index]);
+                    kolich += 1;
+                }
+            }
+            if (kolich != 0)
+            {
+                lbMain.Items.Add("Сумма значений элементов массива меньших, чем число 21");
+                lbMain.Items.Add(summa);
+            }
+            else lbMain.Items.Add("В массиве не содержатся элементы, значения которых меньше, чем число 21");
+        }
+
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            
+            
+            
+                
+                
+                    
+                
+                
+            
+        
+
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            
+            
+                
+                
+                    
+                    
+                
+            
+            
+            
+                
+                
+            
+            
+        
+
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            
+            
+                
+                
+                    
+                
+            
+            
+            
+                
+            
+            
+        
+
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            
+            
+                
+                
+                    
+                
+            
+            
+            
+                
+            
+            
+        
+
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            
+            
+            
+            
+                
+                
+                    
+                    
+                    
+                
+                
+                
+                    
+                    
+                        
+                    
+                
+            
+            
+            
+            
+                
+                
+                
+                    
+                    
+                
+            
+            
+        
+
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            
+            
+                
+                
+                    
+                
+            
+            
+            
+                
+            
+            
+        
+
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            
+            
+                
+                
+                    
+                
+            
+            
+            
+                
+            
+            
+        
+
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            
+            
+                
+                
+                    
+                    
+                
+            
+            
+            
+                
+                
+            
+            
+        
+
+        private void button18_Click(object sender, RoutedEventArgs e)
+        {
+            ArrayList myAL = new ArrayList();
+            int index;
+            int itemCount = 10;
+            Random rnd1 = new Random();
+            int number;
+            lbMain.Items.Clear();
+            lbMain.Items.Add("Исходный массив");
+            for (index = 1; index <= itemCount; index++)
+            {
+                number = -100 + rnd1.Next(200);
+                myAL.Add(number);
+                lbMain.Items.Add(number);
+            }
+            Gistogramma win2 = new Gistogramma(itemCount, myAL);
+            win2.Show();
         }
     }
 }
