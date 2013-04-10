@@ -269,5 +269,31 @@ namespace lab3_7
             }
             else lbMain.Items.Add("В массиве не содержатся элементы, значения которых меньше, чем число 21");
         }
+
+        private void button10_Click(object sender, RoutedEventArgs e)
+        {
+            ArrayList myAL = new ArrayList();
+            int index;
+            int itemCount = 10;
+            Random rnd1 = new Random();
+            int number;
+            lbMain.Items.Clear();
+            lbMain.Items.Add("Исходный массив");
+            for (index = 1; index <= itemCount; index++)
+            {
+                number = -100 + rnd1.Next(200);
+                myAL.Add(number);
+                lbMain.Items.Add(number);
+            }
+            lbMain.Items.Add("Измененный массив(Увеличили на единицу значения всех элементов кратных 5)");
+            for (index = 0; index < itemCount; index++)
+            {
+                if (Math.IEEERemainder(Convert.ToInt32(myAL[index]), 5) == 0)
+                {
+                    myAL[index] = Convert.ToInt32(myAL[index]) + 1;
+                }
+                lbMain.Items.Add(myAL[index]);
+            }
+        }
     }
 }
