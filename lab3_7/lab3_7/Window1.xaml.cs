@@ -71,5 +71,33 @@ namespace lab3_7
         {
             this.Close();
         }
+
+        private void button4_Click(object sender, RoutedEventArgs e)
+        {
+            ArrayList myAL = new ArrayList();
+            int index;
+            int itemCount = 10;
+            Random rnd1 = new Random();
+            int number;
+            bool flag = false;
+            lbMain.Items.Clear();
+            lbMain.Items.Add("Исходный массив");
+            for (index = 1; index <= itemCount; index++)
+            {
+                number = -100 + rnd1.Next(200);
+                myAL.Add(number);
+                lbMain.Items.Add(number);
+            }
+            for (index = 0; (index < itemCount) && (flag == false); index++)
+            {
+                if ((Convert.ToInt32(myAL[index])) > 25) flag = true;
+            }
+            if (flag == true)
+            {
+                lbMain.Items.Add("Номер первого элемента массива, значение которого больше 25(начиная с единицы)");
+                lbMain.Items.Add(index);
+            }
+            else lbMain.Items.Add("В массиве не содержится элемент, значение которого больше 25");
+        }
     }
 }
