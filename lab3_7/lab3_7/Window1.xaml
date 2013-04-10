@@ -22,6 +22,6 @@
         
         
         
-        
+        <Button Height="23" HorizontalAlignment="Left" Margin="117,0,0,37" Name="button18" VerticalAlignment="Bottom" Width="71" Click="button18_Click">Задание 16</Button>
     </Grid>
 </Window>
