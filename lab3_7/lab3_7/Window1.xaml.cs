@@ -593,5 +593,225 @@ namespace lab3_7
             Gistogramma win2 = new Gistogramma(itemCount, myAL);
             win2.Show();
         }
+
+        private void button10_Click(object sender, RoutedEventArgs e)
+        {
+            ArrayList myAL = new ArrayList();
+            int index;
+            int itemCount = 10;
+            Random rnd1 = new Random();
+            int number;
+            lbMain.Items.Clear();
+            lbMain.Items.Add("Исходный массив");
+            for (index = 1; index <= itemCount; index++)
+            {
+                number = -100 + rnd1.Next(200);
+                myAL.Add(number);
+                lbMain.Items.Add(number);
+            }
+            lbMain.Items.Add("Измененный массив(Увеличили на единицу значения всех элементов кратных 5)");
+            for (index = 0; index < itemCount; index++)
+            {
+                if (Math.IEEERemainder(Convert.ToInt32(myAL[index]), 5) == 0)
+                {
+                    myAL[index] = Convert.ToInt32(myAL[index]) + 1;
+                }
+                lbMain.Items.Add(myAL[index]);
+            }
+        }
+
+        private void button11_Click(object sender, RoutedEventArgs e)
+        {
+            ArrayList myAL = new ArrayList();
+            int index;
+            int itemCount = 10;
+            Random rnd1 = new Random();
+            int number, summa = 0, kolich = 0;
+            lbMain.Items.Clear();
+            lbMain.Items.Add("Исходный массив");
+            for (index = 1; index <= itemCount; index++)
+            {
+                number = -100 + rnd1.Next(200);
+                myAL.Add(number);
+                lbMain.Items.Add(number);
+            }
+            for (index = 0; index < itemCount; index++)
+            {
+                if (Math.IEEERemainder(Convert.ToInt32(myAL[index]), 3) != 0)
+                {
+                    summa += Convert.ToInt32(myAL[index]);
+                    kolich += 1;
+                }
+            }
+            if (kolich != 0)
+            {
+                lbMain.Items.Add("Сумма значений элементов массива, значения которых не кратны 3");
+                lbMain.Items.Add(summa);
+            }
+            else lbMain.Items.Add("В массиве не содержатся элементы, значения которых не кратны 3");
+        }
+
+        private void button12_Click(object sender, RoutedEventArgs e)
+        {
+            ArrayList myAL = new ArrayList();
+            int index;
+            int itemCount = 10;
+            Random rnd1 = new Random();
+            int number, kolich = 0;
+            lbMain.Items.Clear();
+            lbMain.Items.Add("Исходный массив");
+            for (index = 1; index <= itemCount; index++)
+            {
+                number = -100 + rnd1.Next(200);
+                myAL.Add(number);
+                lbMain.Items.Add(number);
+            }
+            for (index = 1; index < itemCount; index++)
+            {
+                if ((Convert.ToInt32(myAL[index]) < Convert.ToInt32(myAL[0])) && (Convert.ToInt32(myAL[index]) > Convert.ToInt32(myAL[itemCount - 1])))
+                {
+                    kolich += 1;
+                }
+            }
+            if (kolich != 0)
+            {
+                lbMain.Items.Add(Convert.ToString(kolich) + " чисел меньше первого элемента массива и одновременно больше последнего элемента");
+            }
+            else lbMain.Items.Add("В массиве не содержатся элементы, значения которых меньше первого элемента массива и одновременно больше последнего элемента");
+        }
+
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            
+            
+                
+                
+                    
+                
+            
+            
+            
+                
+            
+            
+        
+
+        private void button14_Click(object sender, RoutedEventArgs e)
+        {
+            ArrayList myAL = new ArrayList();
+            ArrayList myInd = new ArrayList();
+            int index;
+            int itemCount = 10;
+            Random rnd1 = new Random();
+            int number, kolich, bliz;
+            lbMain.Items.Clear();
+            lbMain.Items.Add("Исходный массив");
+            for (index = 1; index <= itemCount; index++)
+            {
+                number = -100 + rnd1.Next(200);
+                myAL.Add(number);
+                lbMain.Items.Add(number);
+            }
+            bliz = Math.Abs(Convert.ToInt32(myAL[1]) - Convert.ToInt32(myAL[0]));
+            myInd.Add(0);
+            for (index = 2; index < itemCount; index++)
+            {
+                if (Math.Abs(Convert.ToInt32(myAL[1]) - Convert.ToInt32(myAL[index])) < bliz)
+                {
+                    bliz = Math.Abs(Convert.ToInt32(myAL[1]) - Convert.ToInt32(myAL[index]));
+                    myInd.Clear();
+                    myInd.Add(index);
+                }
+                else
+                {
+                    if (Math.Abs(Convert.ToInt32(myAL[1]) - Convert.ToInt32(myAL[index])) == bliz)
+                    {
+                        myInd.Add(index);
+                    }
+                }
+            }
+            kolich = myInd.Count;
+            if (kolich > 1)
+            {
+                lbMain.Items.Add("Список номеров и значений элементов массива, меньше всего отличающихся от второго элемента этого массива");
+                while (kolich > 0)
+                {
+                    lbMain.Items.Add(Convert.ToString(Convert.ToInt32(myInd[kolich - 1]) + 1) + " элемент массива, значение которого равно " + Convert.ToString(Convert.ToInt32(myAL[Convert.ToInt32(myInd[kolich - 1])])));
+                    kolich--;
+                }
+            }
+            else lbMain.Items.Add(Convert.ToString(Convert.ToInt32(myInd[0]) + 1) + " элемент массива, значение которого равно " + Convert.ToString(myAL[Convert.ToInt32(myInd[0])]) + ", меньше всего отличается от второго элемента этого массива");
+        }
+
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            
+            
+                
+                
+                    
+                
+            
+            
+            
+                
+            
+            
+        
+
+        private void button16_Click(object sender, RoutedEventArgs e)
+        {
+            ArrayList myAL = new ArrayList();
+            int index;
+            int itemCount = 10;
+            Random rnd1 = new Random();
+            int number, kolich = 0;
+            lbMain.Items.Clear();
+            lbMain.Items.Add("Исходный массив");
+            for (index = 1; index <= itemCount; index++)
+            {
+                number = -100 + rnd1.Next(200);
+                myAL.Add(number);
+                lbMain.Items.Add(number);
+            }
+            for (index = 0; index < itemCount; index++)
+            {
+                if (Math.IEEERemainder(Convert.ToInt32(myAL[index]), 3) == 0)
+                {
+                    kolich += 1;
+                }
+            }
+            if (kolich != 0)
+            {
+                lbMain.Items.Add("В массиве содержатся " + Convert.ToString(kolich) + " элементов кратных 3");
+            }
+            else lbMain.Items.Add("В массиве не содержатся элементы кратные 3");
+        }
     }
 }
